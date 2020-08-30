@@ -1,5 +1,5 @@
 <?php 
-    $db = new PDO('mysql:host=localhost;dbname=mvc_db', 'root', '');
+    $db = new PDO('mysql:host=localhost;dbname=epiz_26627559_mvc_db\', \'epiz_26627559\', \'K7zXQ8Vkcur2O\');
     if (isset($_SESSION['username'])) {
         $user = $_SESSION['username'];
     } else {

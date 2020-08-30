@@ -1,0 +1,1 @@
+RewriteEngine on RewriteCond %{REQUEST_FILENAME} !-fRewriteCond %{REQUEST_FILENAME} !-dphp_flag display_errors OnRewriteRule ^(.*)$ index.php?route=$1 [L,QSA]

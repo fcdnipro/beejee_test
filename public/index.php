@@ -4,7 +4,7 @@
 ?>
 <?php
     require_once "../includes/startup.php";
-    $db = new PDO('mysql:host=localhost;dbname=mvc_db', 'root', '');
+    $db = new PDO('mysql:host=localhost;dbname=epiz_26627559_mvc_db', 'epiz_26627559', 'K7zXQ8Vkcur2O');
     $registry->offsetSet('db', $db);
     
     $template = new Template($registry);
