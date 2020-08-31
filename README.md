@@ -21,3 +21,5 @@
 Доступ к учетной записи администратора
 Login: admin
 Password: 123123
+
+ссылка на пример https://e-design.pp.ua
