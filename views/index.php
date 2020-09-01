@@ -27,7 +27,14 @@
 		<div class="card-body">
 			<div class="card-text">
                 <div><?php echo $data['text'];?></div>
-				<input class="checkbox-status" type="checkbox" <?php echo $data['status'] == 1 ? 'checked' : ''?> disabled/>
+                <div class="status-info">
+                    <input class="checkbox-status"  type="checkbox" <?php echo $data['status'] == 1 ? 'checked' : ''?> disabled/>
+                    <span class="status-text">
+                        <?php if($data['edited'] == '1'): ?>
+                            Edited by admin at <?=date('F d, Y H:i:s', strtotime($data['updated']))?>
+                        <?php endif;?>
+                    </span>
+                </div>
 			</div>
 		</div>
 		<form action="/edit" method="POST" class="edit-form">

@@ -26,7 +26,9 @@
                 users.email,
                 questionnaire.text,
                 questionnaire.status,
-                questionnaire.id
+                questionnaire.id,
+                questionnaire.edited,
+                questionnaire.updated
                 FROM users, questionnaire
                 WHERE questionnaire.user_id = users.id" . $sort)->fetchAll();
 
@@ -125,8 +127,11 @@
                 } else {
                     $query = "UPDATE questionnaire SET questionnaire.text = '" 
                         . htmlspecialchars(addslashes($_POST['text'])) . "', questionnaire.status = "
-                        . $status_real 
+                        . $status_real . ', '
+                        . 'questionnaire.edited = 1, '
+                        . 'questionnaire.updated = "' . date('Y-m-d H:i:s') . '"'
                         . " WHERE questionnaire.id = " . $taskId;
+
                     if (!$this->registry['db']->query($query)) {
                         array_push($messageList, 'Invalid query');
                         $boolError = true;
